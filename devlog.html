@@ -1,0 +1,180 @@
+
+<!DOCType HTML>
+<html>
+<head>
+	<script>
+		function passvalues()
+		{
+			var firstname = document.getElementById("username-input").value;
+			localStorage.setItem("textvalue", firstname);
+			return false;
+		}
+			function checkPassword(form) {
+                password1 = form.password.value;
+                password2 = form.confpassword.value;
+  
+                // If password not entered
+                if (password == '')
+                    alert ("Please enter Password");
+                      
+                // If confirm password not entered
+                else if (confpassword == '')
+                    alert ("Please enter confirm password");
+                      
+                // If Not same return False.    
+                else if (password != confpassword) {
+                    alert ("\nPassword did not match: Please try again...")
+                    return false;
+                }
+  
+                else{
+                    return true;
+                }
+            }
+
+	</script>
+	<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@200&display=swap" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css2?family=Alegreya+Sans:wght@100&display=swap" rel="stylesheet">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	
+	<style type="text/css">
+		html {
+  			height: 100%;
+		}
+		body {
+		  margin:0;
+		  padding:0;
+		  font-family: sans-serif;
+		  background-image:url("https://images.unsplash.com/photo-1579546929662-711aa81148cf?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8Y29sb3JmdWwlMjB3YWxscGFwZXJ8ZW58MHx8MHx8&w=1000&q=80");
+		  background-repeat: no-repeat;
+		  background-size: cover;
+		  overflow: hidden;
+		}
+
+		.login-box {
+		  position: absolute;
+		  top: 50%;
+		  left: 50%;
+		  width: 30%;
+		  height: 70%;
+		  padding: 2.6vw;
+		  transform: translate(-50%, -50%);
+		  background-color:white ;
+		  box-sizing: border-box;
+		  box-shadow: 0 0.977vw 1.63vw rgba(0,0,0,.6);
+		  border-radius: 1vw;
+		}
+
+		.login-box h2 {
+		  margin: 0 0 1.95vw;
+		  padding: 0.977vw;
+		  color: #000;
+		  text-align: center;
+		  border-bottom: 0.065vw solid #adadad;
+		  font-size: 4vw;
+		  font-family: 'Alegreya Sans', sans-serif;
+		}
+
+		.login-box .user-box {
+		  position: relative;
+		  padding: 0 0.326vw;
+		}
+
+
+		.login-box .user-box input {
+		  width: 100%;
+		  padding: 0.651vw 0;
+		  font-size: 1vw;
+		  color: #000;
+		  margin-bottom: 1.953vw;
+		  border: none;
+		  border-bottom: 0.065vw solid #000;
+		  outline: none;
+		  background: transparent;
+
+		}
+		.login-box .user-box label {
+		  position: absolute;
+		  top:0;
+		  left: 0;
+		  padding: 0.65vw 0;
+		  font-size: 1vw;
+		  color: #000;
+		  pointer-events: none;
+		  transition: .5s;
+		  font-family: 'Plus Jakarta Sans', sans-serif;
+		}
+
+		.login-box .user-box input:focus ~ label,
+		.login-box .user-box input:valid ~ label {
+		  top: -1.3vw;
+		  left: 0;
+		  color: #033e6b;
+		  font-size: 0.9vw;
+		}
+
+		#submit {
+		  position: relative;
+		  display: inline-block;
+		  padding: 0.65vw 1.3vw;
+		  color: #033e6b;
+		  font-size: 1vw;
+		  text-decoration: none;
+		  text-transform: uppercase;
+		  overflow: hidden;
+		  transition: .5s;
+		  margin-top: 2.60vw;
+		  letter-spacing: 0.26vw;
+		  border:0.065vw solid #033e6b;
+		  border-radius: 0.26vw;
+		  outline: none;
+		  cursor: pointer;
+		  background-color: white;
+		  align-content: center;
+		  margin: 1vw 1vw;
+		  width: 10vw;
+		}
+
+		#submit:hover {
+		  background: #033e6b;
+		  color: #fff;
+		  border-radius: 0.326vw;
+		  border: 0.065vw solid #033e6b;
+		}
+		.login-box form{
+			padding-top:0.326vw ;
+		}
+		#register{
+			align-items: center;
+			align-content: center;
+		}
+	</style>
+	
+</head>
+<body>
+	<div class="login-box">
+  <h2>Sign Up</h2>
+  <form method="GET" action="devmain.html" id="form-box" onSubmit = "return checkPassword(this)">
+    <div class="user-box">
+      <input id="username-input" type="text" required>
+      <label>Name</label>
+    </div>
+    <div class="user-box">
+      <input id="email-input" type="email" required>
+      <label>Email</label>
+    </div>
+    <div class="user-box">
+      <input id="pass" type="password" required>
+      <label>Password</label>
+    </div>
+    <div class="user-box">
+      <input id="pass" type="password" required>
+      <label>Re-type Password</label>
+    </div>
+    <input id="submit" type="submit" value="Register" onclick="passvalues();"/>
+  	<input id="submit" type="button" value="Login" onclick="#"/>
+  </form>
+</div>
+
+</body>
+</html>
